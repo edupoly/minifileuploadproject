@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en"
+    xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top text-center">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/347642667/original/98fd82a6c702966ba5509567916dedfc5b00eb79.png" alt="..." height="100">
+                <b>Hello!!! <span th:text="${email}"></span></b>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="${'/days/'+email}">Workouts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="${'/userWorkoutReport/'+email}">Report</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/login">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="d-flex flex-wrap justify-content-center">
+        <div th:each="dayworkout : ${workouts}" class="w-25 text-center border border-2 m-2">
+            <a th:href="'/addUserWorkout/'+${day}+'/'+${email}+'/'+${dayworkout.workout}+'/'+${dayworkout.category}+'/'+${dayworkout.sets}+'/'+${dayworkout.repetitions}">
+                <h2 th:text="${dayworkout.workout}" class="border border-2 p-2 m-2">
+                </h2>
+            </a>
+            <div>
+                <h3>Sets:<span th:text="${dayworkout.sets}"></span></h3>
+                <h3>Repetions:<span th:text="${dayworkout.repetitions}"></span></h3>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</body>
+</html>

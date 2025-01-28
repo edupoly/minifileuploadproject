@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en"
+    xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top text-center">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/347642667/original/98fd82a6c702966ba5509567916dedfc5b00eb79.png" alt="..." height="100">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/registerUser">Register</a>
+                    </li>
+                </ul>
+            </div>
+            <!--        <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+            <!--            <ul class="navbar-nav ms-auto">-->
+            <!--                <li class="nav-item">-->
+            <!--                    <a class="nav-link active" aria-current="page" href="#">Home</a>-->
+            <!--                </li>-->
+            <!--                <li class="nav-item">-->
+            <!--                    <a class="nav-link" href="#">Link</a>-->
+            <!--                </li>-->
+            <!--                -->
+            <!--            </ul>-->
+            <!--        </div>-->
+        </div>
+    </nav>
+<!--    <form th:action="@{/}" th:object="${user}" method="POST">-->
+<!--        <input type="text" name="name" placeholder="Enter Full Name" th:field="*{fullName}">-->
+<!--        <br>-->
+<!--        <input type="text" name="mobile" placeholder="Enter mobile" th:field="*{mobile}">-->
+<!--        <br>-->
+<!--        <input type="text" name="email" placeholder="Enter Email" th:field="*{email}">-->
+<!--        <br>-->
+<!--        <input type="password" name="password" placeholder="Enter password" th:field="*{password}">-->
+<!--        <br>-->
+
+<!--        <button>Register</button>-->
+<!--    </form>-->
+    <div class="container d-flex justify-content-center mb-2">
+        <div class="w-50 m-2 text-center">
+            <form th:action="@{/registerUser}" th:object="${user}" method="POST">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="fullname" id="floatingFullName" placeholder="Full Name Please" th:field="*{fullName}">
+                    <label for="floatingFullName">Full Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="mobile" id="floatingMobile" placeholder="Mobile Number Please" th:field="*{mobile}">
+                    <label for="floatingMobile">Mobile Number</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com" th:field="*{email}">
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" name="password"  th:field="*{password}" class="form-control" id="floatingPassword" placeholder="Enter your password">
+                    <label for="floatingPassword">Enter Password</label>
+                </div>
+
+                <div class="d-flex flex-wrap">
+
+                    <div class="form-floating mb-3 w-50">
+                        <input type="number" name="age"  th:field="*{age}" class="form-control" id="floatingAge" placeholder="Enter your Age">
+                        <label for="floatingAge">Enter Age</label>
+                    </div>
+                    <div class="form-floating mb-3 w-50">
+                        <input type="string" name="gender"  th:field="*{gender}" class="form-control" id="floatingGender" placeholder="Enter your Gender">
+                        <label for="floatingGender">Enter gender</label>
+                    </div>
+                    <div class="form-floating mb-3 w-50">
+                        <input type="number" name="height"  th:field="*{height}" class="form-control" id="floatingheight" placeholder="Enter your height">
+                        <label for="floatingheight">Enter height</label>
+                    </div>
+                    <div class="form-floating mb-3 w-50">
+                        <input type="number" name="weight"  th:field="*{weight}" class="form-control" id="floatingweight" placeholder="Enter your weight">
+                        <label for="floatingweight">Enter weight</label>
+                    </div>
+                    <div class="d-flex justify-content-center flex-grow-1">
+                        <div class=" d-flex align-items-center p-5">
+                            <h3>Your Fitness Goal</h3>
+                        </div>
+                        <div class="">
+                            <div class="form-check form-switch mb-3">
+                                <input class="form-check-input" type="checkbox" name="goal"  th:field="*{calorieBurning}"  id="calorieBurning" placeholder="Enter your weight">
+                                <label class="form-check-label" for="looseWeight">Calorie Burning</label>
+                            </div>
+                            <div class="form-check form-switch mb-3">
+                                <input class="form-check-input" type="checkbox" name="goal"  th:field="*{tonedBody}"  id="tonedBody" placeholder="Enter your weight">
+                                <label class="form-check-label" for="gainMuscle">Toned Body</label>
+                            </div>
+                            <div class="form-check form-switch mb-3">
+                                <input class="form-check-input" type="checkbox" name="goal"  th:field="*{dietControl}"  id="dietControl" placeholder="Enter your weight">
+                                <label class="form-check-label" for="gainMuscle">Diet Control</label>
+                            </div>
+                            <div class="form-check form-switch mb-3">
+                                <input class="form-check-input" type="checkbox" name="goal"  th:field="*{looseWeight}"  id="looseWeight" placeholder="Enter your weight">
+                                <label class="form-check-label" for="looseWeight">Loose Weight</label>
+                            </div>
+                            <div class="form-check form-switch mb-3">
+                                <input class="form-check-input" type="checkbox" name="goal"  th:field="*{gainWeight}"  id="gainWeight" placeholder="Enter your weight">
+                                <label class="form-check-label" for="gainMuscle">Gain Weight</label>
+                            </div>
+                            <div class="form-check form-switch mb-3">
+                                <input class="form-check-input" type="checkbox" name="goal"  th:field="*{gainMuscle}"  id="gainMuscle" placeholder="Enter your weight">
+                                <label class="form-check-label" for="gainMuscle">Gain Muscle</label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="btn btn-success btn-lg">Register/Signup</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

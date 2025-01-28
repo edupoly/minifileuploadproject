@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"
+    xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add Workout</h1>
+    <form th:action="@{/addWorkout}" th:object="${workout}" method="POST">
+        <select name="day" th:field="*{day}">
+            <option disabled selected value="null">Please Select day</option>
+            <option th:each="day : ${days}" th:value="${day[0]}">
+                <span th:text="${day[0]}"></span>
+            </option>
+        </select>
+        <br>
+        <select name="category" th:field="*{category}">
+            <option disabled selected value="null">Please Select Category</option>
+            <option th:each="day : ${days}" th:value="${day[1]}">
+                <span th:text="${day[1]}"></span>
+            </option>
+        </select>
+        <br>
+        <input type="text" name="workout" placeholder="Enter Workout" th:field="*{workout}">
+        <br>
+        <input type="number" name="sets" placeholder="Enter Sets" th:field="*{sets}">
+        <br>
+        <input type="number" name="repetitions" placeholder="Enter Repetitions" th:field="*{repetitions}">
+        <br>
+        <button>Add Workout</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en"
+    xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top text-center">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/347642667/original/98fd82a6c702966ba5509567916dedfc5b00eb79.png" alt="..." height="100">
+                <b>Hello!!! <span th:text="${email}"></span></b>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="${'/days/'+email}">Workouts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="${'/userWorkoutReport/'+email}">Report</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/login">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="d-flex justify-content-center p-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4 container text-center">
+            <div class="col">
+                <div class="card">
+                    <img height="300px" src="https://hips.hearstapps.com/hmg-prod/images/body-builder-royalty-free-image-1688161203.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a th:href="'/dayWorkouts/day1/'+${email}"><h5 class="card-title">Day 1</h5></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img height="300px" src="https://i.ytimg.com/vi/mQMA88jJrFc/maxresdefault.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a th:href="'/dayWorkouts/day2/'+${email}"><h5 class="card-title">Day 2</h5></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img height="300px" src="https://hips.hearstapps.com/hmg-prod/images/mindset-is-everything-royalty-free-image-1571082203.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a th:href="'/dayWorkouts/day3/'+${email}"><h5 class="card-title">Day 3</h5></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img height="300px"  src="https://hips.hearstapps.com/hmg-prod/images/betina-lower-body-1571417598.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a th:href="'/dayWorkouts/day4/'+${email}"><h5 class="card-title">Day 4</h5></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img  height="300px" src="https://hips.hearstapps.com/hmg-prod/images/articles/2016/02/drop-sets-1487213505.jpg?crop=1xw:0.884xh;center,top" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a th:href="'/dayWorkouts/day5/'+${email}"><h5 class="card-title">Day 5</h5></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
